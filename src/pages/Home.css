@@ -1,0 +1,127 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding: 100px 10%;
+  color: #fff;
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #1e3c72);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+/* Text Section */
+.home-left {
+  flex: 1 1 45%;
+  max-width: 500px;
+  animation: fadeInLeft 1.2s ease-in-out;
+}
+
+.home-left h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.highlight {
+  color: #00e0ff;
+}
+
+.home-left p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #e2e8f0;
+}
+
+/* Resume Button */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #00b4d8;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0077b6;
+  transform: translateY(-3px);
+}
+
+/* Subtle pulsing animation */
+.pulse {
+  animation: pulseAnim 2s infinite;
+}
+
+/* Image Section */
+.home-right {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  animation: fadeInRight 1.5s ease-in-out;
+}
+
+.home-right img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease;
+}
+
+.home-right img:hover {
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulseAnim {
+  0% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.5); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 180, 216, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0); }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 5%;
+  }
+
+  .home-right img {
+    width: 260px;
+    height: 260px;
+    margin-top: 30px;
+  }
+
+  .home-left h1 {
+    font-size: 2.2rem;
+  }
+
+  .home-left p {
+    font-size: 1rem;
+  }
+}
